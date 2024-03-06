@@ -227,17 +227,13 @@ img {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 260px;
+  width: 200px;
 }
 
-.home__blob {
-  fill: black;
-}
-
-.home__blob-img {
-  width: 80%;
-}
-
+.perfil{
+  border-radius: 10%;
+  margin-bottom: 10px;
+  }
 /*BUTTONS*/
 .button {
   display: inline-block;
@@ -632,7 +628,3 @@ label {
   font-weight: bold;
 }
 
-#content-above-form {
-  /* Estilos para o conteúdo acima do formulário */
-}
-/*formulário responsivo*/
