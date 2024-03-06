@@ -377,7 +377,7 @@ img {
 
 /* ===== FOOTER =====*/
 .footer {
-  background-color: var(--second-color);
+  background-color: #ffe600;
   color: #fff;
   text-align: center;
   font-weight: var(--font-semi);
@@ -387,6 +387,7 @@ img {
 .footer__title {
   font-size: 2rem;
   margin-bottom: var(--mb-4);
+  color: var(--second-color);
 }
 
 .footer__social {
