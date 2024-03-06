@@ -402,6 +402,7 @@ img {
 
 .footer__copy {
   font-size: var(--smaller-font-size);
+  color: var(--second-color);
 }
 
 /* ===== MEDIA QUERIES=====*/
