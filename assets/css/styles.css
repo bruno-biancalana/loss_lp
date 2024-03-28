@@ -11,7 +11,7 @@
   --first-color: #434343;
   --second-color: hsl(var(--hue-color), 56%, 12%);
   /*===== Fuente y tipografia =====*/
-  --body-font: 'Poppins', sans-serif;
+  --body-font: 'Proxima nova', arial;
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: .938rem;
