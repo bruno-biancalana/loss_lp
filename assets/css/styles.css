@@ -417,7 +417,8 @@ img {
 
 @media screen and (max-width: 420px) {
   .home__img {
-    margin-bottom: 70px;
+    margin-bottom: 40px;
+    width: 180px;
   }
 }
 
