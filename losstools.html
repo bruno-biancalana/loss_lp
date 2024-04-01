@@ -1,0 +1,33 @@
+<!-- 
+    Inicio: 19/02/2024
+    Inclusão da tela: 20/02/2024
+    PROJETO MEGAZORD -> TELA DE LOGIN
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loss Tools - XSP9</title>
+    <link rel="stylesheet" href="/assets/css/styleIndex.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="/Assets/img/logo.png" alt="Logotipo">
+        </div>
+        <form id="loginForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" onclick="validarlogin()">Entrar</button>
+        </form>
+        <p id="mensagemErro" class="erro"></p>
+    </div>
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
