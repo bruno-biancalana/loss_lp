@@ -26,7 +26,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         username === "bruno" && password === "bruno") {
 
         // Redirecione para a Home
-        window.location.href = "home.html?username=" + username;
+        window.location.replace('home.html');
         localStorage.setItem('username', username);
     } else {
 
