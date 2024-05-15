@@ -1,3 +1,25 @@
+// ### FUNÇÃO DE LOGIN -> INDEX.HTML ###
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    // Inclusão de usuários)
+    if (username === "admin" && password === "admin" || 
+        username === "teste" && password === "teste" || 
+        username === "bruno" && password === "bruno") {
+
+        // Redirecione para a Home
+        window.location.replace('home.html');
+        localStorage.setItem('username', username);
+    } else {
+
+        // Credenciais incorretas
+        document.getElementById("mensagemErro").innerText = "Credenciais incorretas. Tente novamente.";
+    }
+});
+
 /*===== MENU SHOW =====*/ 
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
