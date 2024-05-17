@@ -247,4 +247,25 @@ li.hidden {
   display: none;
 }
 
+/* Estilo para o botão "Ver mais" */
+.expand-button {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.expand-button:hover {
+  background-color: #357ae8;
+  transform: scale(1.05);
+}
+
+.expand-button:focus {
+  outline: none;
+}
