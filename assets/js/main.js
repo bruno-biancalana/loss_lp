@@ -8,7 +8,9 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     // Inclusão de usuários)
     if (username === "admin" && password === "admin" || 
         username === "teste" && password === "teste" || 
-        username === "bruno" && password === "bruno") {
+        username === "bruno" && password === "bruno" ||
+        username === "lucas" && password === "misael"||
+        username === "fernando" && password === "barbosa") {
 
         // Redirecione para a Home
         window.location.replace('home.html');
