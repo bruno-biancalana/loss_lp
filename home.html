@@ -44,7 +44,11 @@
         <li><a href="https://lenel-brasil.adminml.com:8080/#/login" target="_blank"><i class="fa-solid fa-screwdriver-wrench"></i>LENEL </a></li>
         <li><a href="https://docs.google.com/spreadsheets/d/19VS6PuGS60X7R21OVpqu5rQwvxZPhrd0yTxs_cEU3ss/edit?usp=sharing" target="_blank"><i class="fas fa-file-excel"></i> Planilha de bloqueados</a></li>
         <li><a href="https://docs.google.com/spreadsheets/d/1ieIpgYaO5hOltuHlZO3ijZyQvhy57CeqwHvpHl-gQNg/edit?usp=sharing" target="_blank"><i class="fas fa-file-excel"></i> Base de solicitações de crachá</a></li>
-        <li><a href="#"><i class="fas fa-external-link-alt"></i> Ver mais</a></li>
+        <li class="hidden"><a href="#"><i class="fas fa-file-alt"></i> Documento 5</a></li>
+        <li class="hidden"><a href="#"><i class="fas fa-file-alt"></i> Documento 6</a></li>
+        <li class="hidden"><a href="#"><i class="fas fa-file-alt"></i> Documento 7</a></li>
+    </ul>
+    <button class="expand-button">Ver mais</button>
       </ul>
     </section>
     <!-- SEÇÃO DE LIBERAÇÕES -->
@@ -117,10 +121,57 @@
 
       
   </main>
-
-
+  <!-- Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <ul id="fullList"></ul>
+  </div>
+</div>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script>
 
+document.addEventListener("DOMContentLoaded", function() {
+  // Fechar o modal ao carregar a página
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+
+  // Adicionar evento de clique aos botões "Ver mais"
+  document.querySelectorAll(".expand-button").forEach(function(button) {
+    button.addEventListener("click", function() {
+      var section = this.parentNode;
+      var allItems = section.querySelectorAll("li");
+      var fullList = document.getElementById("fullList");
+
+      // Limpar a lista completa antes de adicionar os itens
+      fullList.innerHTML = "";
+
+      allItems.forEach(function(li) {
+        var clonedLi = li.cloneNode(true);
+        clonedLi.style.display = "block";  // Garantir que os itens estarão visíveis no modal
+        fullList.appendChild(clonedLi);
+      });
+
+      modal.style.display = "flex"; // Usar flex para centralizar
+    });
+  });
+
+  // Fechar o modal ao clicar no botão de fechar (X)
+  document.getElementsByClassName("close")[0].addEventListener("click", function() {
+    modal.style.display = "none";
+  });
+
+  // Fechar o modal ao clicar fora dele
+  window.addEventListener("click", function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+
+
+
+    
     // BLOCO JS DA BARRA DE PESQUISA
     document.getElementById("searchButton").addEventListener("click", function() {
     var searchTerm = document.getElementById("searchInput").value.toLowerCase();
