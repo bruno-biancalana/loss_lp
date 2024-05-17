@@ -10,7 +10,8 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         username === "teste" && password === "teste" || 
         username === "bruno" && password === "bruno" ||
         username === "lucas" && password === "misael"||
-        username === "fernando" && password === "barbosa") {
+        username === "fernando" && password === "barbosa" ||
+        username === "luis" && password === "lopes") {
 
         // Redirecione para a Home
         window.location.replace('home.html');
