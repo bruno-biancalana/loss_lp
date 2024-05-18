@@ -19,7 +19,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     } else {
 
         // Credenciais incorretas
-        document.getElementById("mensagemErro").innerText = "Credenciais incorretas. Tente novamente.";
+        document.getElementById("mensagemErro").innerText = "Credenciais incorretas, tente novamente.";
     }
 });
 
