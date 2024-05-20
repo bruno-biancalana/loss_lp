@@ -65,6 +65,69 @@ START DATE: 06/03 -->
 
 		</section>
 
+		<div class="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="/assets/img/slide1.jpg" alt="Imagem 1">
+					<div class="caption">Capacitação com o time noturno da Protege</div>
+				</div>
+				<div class="carousel-item">
+					<img src="/assets/img/slide2.jpg" alt="Imagem 2">
+					<div class="caption">Capacitação com o time diurno da Protege</div>
+				</div>
+				<div class="carousel-item">
+					<img src="/assets/img/slide3.jpg" alt="Imagem 3">
+					<div class="caption">Onboarding realizado aos novos colaboradores</div>
+				</div>
+			</div>
+			<button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+			<button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+
+			<script>
+			let currentSlide = 0;
+const slideInterval = 3000; // Tempo de transição automática em milissegundos (3 segundos)
+let autoSlideInterval;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.carousel-item');
+    if (index >= slides.length) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = slides.length - 1;
+    } else {
+        currentSlide = index;
+    }
+    const newTransform = `translateX(-${currentSlide * 100}%)`;
+    document.querySelector('.carousel-inner').style.transform = newTransform;
+
+    // Reinicia o intervalo para a transição automática
+    resetAutoSlide();
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+    showSlide(currentSlide - 1);
+}
+
+function autoSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(autoSlide, slideInterval);
+}
+
+// Inicializa o carrossel e a transição automática
+showSlide(currentSlide);
+resetAutoSlide();
+
+			</script>
+		</div>
+
 		<!--===== SOBRE =====-->
 		<section class="about section " id="about">
 			<h2 class="section-title">Sobre</h2>
