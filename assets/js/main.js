@@ -6,8 +6,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const password = document.getElementById("password").value;
 
     // Inclusão de usuários)
-    if (username === "admin" && password === "admin" || 
-        username === "teste" && password === "teste" || 
+    if ( 
         username === "bruno" && password === "bruno" ||
         username === "lucas" && password === "misael"||
         username === "fernando" && password === "barbosa" ||
