@@ -82,11 +82,13 @@ START DATE: 06/03 -->
 			</div>
 			<button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
 			<button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
-
+			<button class="carousel-control play-pause" onclick="togglePlayPause()">&#9654;</button>
+    		</div>
 			<script>
 			let currentSlide = 0;
-const slideInterval = 5000; // Tempo de transição automática em milissegundos (5 segundos)
+const slideInterval = 4000; // Tempo de transição automática em milissegundos (5 segundos)
 let autoSlideInterval;
+let isPlaying = true;
 
 function showSlide(index) {
     const slides = document.querySelectorAll('.carousel-item');
@@ -119,6 +121,18 @@ function autoSlide() {
 function resetAutoSlide() {
     clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(autoSlide, slideInterval);
+}
+
+function togglePlayPause() {
+    const playPauseButton = document.querySelector('.play-pause');
+    if (isPlaying) {
+        clearInterval(autoSlideInterval);
+        playPauseButton.innerHTML = '&#9654;'; // Play icon
+    } else {
+        autoSlideInterval = setInterval(autoSlide, slideInterval);
+        playPauseButton.innerHTML = '&#10074;&#10074;'; // Pause icon
+    }
+    isPlaying = !isPlaying;
 }
 
 // Inicializa o carrossel e a transição automática

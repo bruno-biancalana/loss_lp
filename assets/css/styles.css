@@ -710,6 +710,17 @@ label {
   right: 10px;
 }
 
+.play-pause {
+  top: 20px;
+  right: 10px;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 1.0);
+  border-radius: 50%;
+}
+
+.play-pause:hover {
+  background-color: rgba(0, 0, 0, 1.0);
+}
 @media (max-width: 600px) {
   .carousel {
       width: 90%;
