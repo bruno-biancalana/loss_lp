@@ -86,7 +86,7 @@ START DATE: 06/03 -->
     		</div>
 			<script>
 			let currentSlide = 0;
-const slideInterval = 4000; // Tempo de transição automática em milissegundos (5 segundos)
+const slideInterval = 3000; // Tempo de transição automática em milissegundos (3 segundos)
 let autoSlideInterval;
 let isPlaying = true;
 
@@ -101,17 +101,16 @@ function showSlide(index) {
     }
     const newTransform = `translateX(-${currentSlide * 100}%)`;
     document.querySelector('.carousel-inner').style.transform = newTransform;
-
-    // Reinicia o intervalo para a transição automática
-    resetAutoSlide();
 }
 
 function nextSlide() {
     showSlide(currentSlide + 1);
+    resetAutoSlide();
 }
 
 function prevSlide() {
     showSlide(currentSlide - 1);
+    resetAutoSlide();
 }
 
 function autoSlide() {
@@ -120,24 +119,30 @@ function autoSlide() {
 
 function resetAutoSlide() {
     clearInterval(autoSlideInterval);
-    autoSlideInterval = setInterval(autoSlide, slideInterval);
+    if (isPlaying) {
+        autoSlideInterval = setInterval(autoSlide, slideInterval);
+    }
 }
 
 function togglePlayPause() {
     const playPauseButton = document.querySelector('.play-pause');
     if (isPlaying) {
         clearInterval(autoSlideInterval);
-        playPauseButton.innerHTML = '&#9654;'; // Play icon
+        playPauseButton.innerHTML = '&#9654;'; // Ícone de play
     } else {
         autoSlideInterval = setInterval(autoSlide, slideInterval);
-        playPauseButton.innerHTML = '&#10074;&#10074;'; // Pause icon
+        playPauseButton.innerHTML = '&#10074;&#10074;'; // Ícone de pause
     }
     isPlaying = !isPlaying;
 }
 
 // Inicializa o carrossel e a transição automática
-showSlide(currentSlide);
-resetAutoSlide();
+document.addEventListener('DOMContentLoaded', () => {
+    showSlide(currentSlide);
+    autoSlideInterval = setInterval(autoSlide, slideInterval);
+    document.querySelector('.play-pause').innerHTML = '&#10074;&#10074;'; // Ícone de pause
+});
+
 
 			</script>
 		</div>
