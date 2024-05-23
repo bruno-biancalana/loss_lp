@@ -65,6 +65,7 @@ START DATE: 06/03 -->
 
 		</section>
 
+		<!--===== CARROSSEL DE IMAGENS =====-->
 		<div class="carousel">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
@@ -136,16 +137,17 @@ function togglePlayPause() {
     isPlaying = !isPlaying;
 }
 
-// Inicializa o carrossel e a transição automática
-document.addEventListener('DOMContentLoaded', () => {
-    showSlide(currentSlide);
-    autoSlideInterval = setInterval(autoSlide, slideInterval);
-    document.querySelector('.play-pause').innerHTML = '&#10074;&#10074;'; // Ícone de pause
-});
+					// Inicializa o carrossel e a transição automática
+					document.addEventListener('DOMContentLoaded', () => {
+    				showSlide(currentSlide);
+    				autoSlideInterval = setInterval(autoSlide, slideInterval);
+    				document.querySelector('.play-pause').innerHTML = '&#10074;&#10074;'; // Ícone de pause
+				});
 
 
 			</script>
 		</div>
+		<!--===== CARROSSEL DE IMAGENS =====-->
 
 		<!--===== SOBRE =====-->
 		<section class="about section " id="about">
