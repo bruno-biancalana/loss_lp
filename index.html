@@ -85,57 +85,59 @@ START DATE: 06/03 -->
 			<button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
 			<button class="carousel-control play-pause" onclick="togglePlayPause()">&#9654;</button>
     		</div>
+
+			<!-- ======================= SCRIPT DO CARROSSEL =================================== -->
 			<script>
 			let currentSlide = 0;
-const slideInterval = 4000; // Tempo de transição automática em milissegundos (3 segundos)
-let autoSlideInterval;
-let isPlaying = true;
+			const slideInterval = 4000; // Tempo de transição automática em milissegundos (3 segundos)
+			let autoSlideInterval;
+			let isPlaying = true;
 
-function showSlide(index) {
-    const slides = document.querySelectorAll('.carousel-item');
-    if (index >= slides.length) {
-        currentSlide = 0;
-    } else if (index < 0) {
-        currentSlide = slides.length - 1;
-    } else {
-        currentSlide = index;
-    }
-    const newTransform = `translateX(-${currentSlide * 100}%)`;
-    document.querySelector('.carousel-inner').style.transform = newTransform;
-}
+			function showSlide(index) {
+    		const slides = document.querySelectorAll('.carousel-item');
+    		if (index >= slides.length) {
+        	currentSlide = 0;
+    			} else if (index < 0) {
+        			currentSlide = slides.length - 1;
+    			} else {
+        	currentSlide = index;
+    		}
+    		const newTransform = `translateX(-${currentSlide * 100}%)`;
+    		document.querySelector('.carousel-inner').style.transform = newTransform;
+		}	
 
-function nextSlide() {
-    showSlide(currentSlide + 1);
-    resetAutoSlide();
-}
+		function nextSlide() {
+    	showSlide(currentSlide + 1);
+    	resetAutoSlide();
+		}	
 
-function prevSlide() {
-    showSlide(currentSlide - 1);
-    resetAutoSlide();
-}
+		function prevSlide() {
+    	showSlide(currentSlide - 1);
+    	resetAutoSlide();	
+		}	
 
-function autoSlide() {
-    showSlide(currentSlide + 1);
-}
+		function autoSlide() {
+    	showSlide(currentSlide + 1);	
+		}	
 
-function resetAutoSlide() {
-    clearInterval(autoSlideInterval);
-    if (isPlaying) {
+		function resetAutoSlide() {
+    	clearInterval(autoSlideInterval);
+    	if (isPlaying) {
         autoSlideInterval = setInterval(autoSlide, slideInterval);
-    }
-}
+    	}
+		}
 
-function togglePlayPause() {
-    const playPauseButton = document.querySelector('.play-pause');
-    if (isPlaying) {
+		function togglePlayPause() {
+    	const playPauseButton = document.querySelector('.play-pause');
+    	if (isPlaying) {
         clearInterval(autoSlideInterval);
         playPauseButton.innerHTML = '&#9654;'; // Ícone de play
-    } else {
+    	} else {
         autoSlideInterval = setInterval(autoSlide, slideInterval);
         playPauseButton.innerHTML = '&#10074;&#10074;'; // Ícone de pause
-    }
-    isPlaying = !isPlaying;
-}
+    	}
+    	isPlaying = !isPlaying;
+		}
 
 					// Inicializa o carrossel e a transição automática
 					document.addEventListener('DOMContentLoaded', () => {
@@ -146,6 +148,8 @@ function togglePlayPause() {
 
 
 			</script>
+			<!-- ======================= SCRIPT DO CARROSSEL =================================== -->
+
 		</div>
 		<!--===== CARROSSEL DE IMAGENS =====-->
 
