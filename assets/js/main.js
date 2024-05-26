@@ -14,7 +14,8 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         username === "kevcosta" && password === "Kb230518!" ||
         username === "anlucena" && password === "Nova@2024" ||
         username === "cseduardo" && password === "Gui@300515" ||
-        username === "taverissimo" && password === "Cl062384@" ) {
+        username === "taverissimo" && password === "Cl062384@" ||
+        username === "matheus.arbex@mercadolivre.com" && password === "@KPIMeli2024@"  ) {
 
         // Redirecione para a Home
         window.location.replace('home.html');
