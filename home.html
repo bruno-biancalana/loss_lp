@@ -200,6 +200,18 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   });
+
+  document.getElementById("searchInput").addEventListener("keyup", function() {
+    var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+    var elements = document.querySelectorAll(".section ul li");
+    elements.forEach(function(element) {
+      if (element.innerText.toLowerCase().includes(searchTerm)) {
+        element.style.display = "block";
+      } else {
+        element.style.display = "none";
+      }
+    });
+  });
   // BLOCO JS DA BARRA DE PESQUISA
 
   </script>
