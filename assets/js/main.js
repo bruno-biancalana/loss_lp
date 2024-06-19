@@ -7,7 +7,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     // Inclusão de usuários)
     if ( 
-        username === "bruno" && password === "bruno" ||
+        username === "bruno" && password === "Bb123@2010" ||
         username === "lucas" && password === "misael"||
         username === "fernando" && password === "barbosa" ||
         username === "samuel" && password === "meli2024" ||
