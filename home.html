@@ -8,7 +8,58 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/style_home.css">
   <title>Loss Tools XSP9</title>
-  
+  <style>
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color: white;
+      overflow: hidden;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 200px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%; /* Change this value to move the tooltip up or down */
+      left: 50%;
+      margin-left: -100px; /* Use half of the tooltip width to center it */
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -30,13 +81,12 @@
     <section id="liberacoes" class="section">
       <h2><i class="fas fa-lock"></i> Liberações</h2>
       <ul>
-        <li><a href="https://lenel-brasil.adminml.com:8080/#/login" target="_blank"><i class="fa-solid fa-id-badge"></i>LENEL </a></li>
-        <li><a href="https://www.appsheet.com/start/cb8de801-ad51-40ee-8015-cd86e419c0ef?platform=desktop&newUser=true&onboarding=true#viewStack[0][identifier][Type]=Control&viewStack[0][identifier][Name]=%C3%8Dndice&appName=sub-Gesti%C3%B3ndeMarbetes-3354426" target="_blank"><i class="fa-solid fa-note-sticky"></i> Inclusão de SELOS</a></li>
-        <li><a href="https://docs.google.com/spreadsheets/d/19VS6PuGS60X7R21OVpqu5rQwvxZPhrd0yTxs_cEU3ss/edit?usp=sharing" target="_blank"><i class="fa-solid fa-circle-xmark"></i> Planilha de bloqueados</a></li>
-        <li><a href="https://docs.google.com/spreadsheets/d/1ieIpgYaO5hOltuHlZO3ijZyQvhy57CeqwHvpHl-gQNg/edit?usp=sharing" target="_blank"><i class="fas fa-file-excel"></i> Base de solicitações de crachá</a></li>
-    </ul>
-    <button class="expand-button">Ver mais</button>
+        <li><a href="https://lenel-brasil.adminml.com:8080/#/login" target="_blank" class="tooltip"><i class="fa-solid fa-id-badge"></i>LENEL <span class="tooltiptext">Controle de crachás</span></a></li>
+        <li><a href="https://www.appsheet.com/start/cb8de801-ad51-40ee-8015-cd86e419c0ef?platform=desktop&newUser=true&onboarding=true#viewStack[0][identifier][Type]=Control&viewStack[0][identifier][Name]=%C3%8Dndice&appName=sub-Gesti%C3%B3ndeMarbetes-3354426" target="_blank" class="tooltip"><i class="fa-solid fa-note-sticky"></i> Inclusão de SELOS <span class="tooltiptext">Aplicativo para inclusão de selos</span></a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/19VS6PuGS60X7R21OVpqu5rQwvxZPhrd0yTxs_cEU3ss/edit?usp=sharing" target="_blank" class="tooltip"><i class="fa-solid fa-circle-xmark"></i> Planilha de bloqueados <span class="tooltiptext">Planilha de itens bloqueados</span></a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1ieIpgYaO5hOltuHlZO3ijZyQvhy57CeqwHvpHl-gQNg/edit?usp=sharing" target="_blank" class="tooltip"><i class="fas fa-file-excel"></i> Base de solicitações de crachá <span class="tooltiptext">Base de solicitações de crachá</span></a></li>
       </ul>
+      <button class="expand-button">Ver mais</button>
     </section>
     <!-- SEÇÃO DE LIBERAÇÕES -->
 
@@ -44,18 +94,16 @@
     <section id="planilhas" class="section">
       <h2><i class="fas fa-table"></i> Planilhas</h2>
       <ul>
-        <li><a href="https://docs.google.com/spreadsheets/d/1VpIXwaW3WBze78xtzr3bjKrqhI0-zgWsZ89QBzj32V8/edit#gid=1976217832" target="_blank"><i class="fa-solid fa-warehouse"></i> Responsáveis por Sites</a></li>
-        <li><a href="https://docs.google.com/spreadsheets/d/1q-XbWY7_p2CFDgfYKOPmvJF6p0i_hAqo3PK0alT1sK4/edit#gid=1549067749" target="_blank"><i class="fas fa-file-excel"></i> Base Missorted</a></li>
-        <li><a href="https://docs.google.com/spreadsheets/d/1tQp60DcF27Yu_Pk2RMbihPJlZLd-sn2s7uR0CCJHd94/edit#gid=734653823" target="_blank"><i class="fa-solid fa-map-location-dot"></i> Mapa de docas</a></li>
-        <li><a href="https://docs.google.com/spreadsheets/d/1v3LFNa-KLd0g9ljVzvuxcuRnbpiD2FYRuCsV333dP9k/edit#gid=0" target="_blank"><i class="fa-solid fa-key"></i> Sandbox</a></li>
-        <li class="hidden"><a href="https://docs.google.com/spreadsheets/d/1OWoWQGw-p1OOt2YToEpRylk88u9M3wBZYbLufM2OfgA/edit#gid=0"><i class="fa-solid fa-map-pin"></i> Siglas de SV's</a></li>
-        <li class="hidden"><a href="https://docs.google.com/spreadsheets/d/1uO98BDBLtOET7k_JlbnJuT68WnDuaFBvhu_HKZfQoXw/edit#gid=535468276"><i class="fa-solid fa-n"></i> Stale - NONECO</a></li>
-        <li class="hidden"><a href="https://docs.google.com/spreadsheets/d/1iWnEtB0JvT2HnMbRllXfsie1AF6kOhJAK3nK1gkrl5Y/edit#gid=354200326"><i class="fa-solid fa-r"></i> Stale - RIMEX</a></li> 
-        <li class="hidden"><a href="https://docs.google.com/spreadsheets/d/1iWnEtB0JvT2HnMbRllXfsie1AF6kOhJAK3nK1gkrl5Y/edit#gid=354200326"><i class="fa-solid fa-s"></i> Stale - SPISUL</a></li> 
+        <li><a href="https://docs.google.com/spreadsheets/d/1VpIXwaW3WBze78xtzr3bjKrqhI0-zgWsZ89QBzj32V8/edit#gid=1976217832" target="_blank" class="tooltip"><i class="fa-solid fa-warehouse"></i> Responsáveis por Sites <span class="tooltiptext">Lista de responsáveis por sites</span></a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1q-XbWY7_p2CFDgfYKOPmvJF6p0i_hAqo3PK0alT1sK4/edit#gid=1549067749" target="_blank" class="tooltip"><i class="fas fa-file-excel"></i> Base Missorted <span class="tooltiptext">Base de dados Missorted</span></a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1tQp60DcF27Yu_Pk2RMbihPJlZLd-sn2s7uR0CCJHd94/edit#gid=734653823" target="_blank" class="tooltip"><i class="fa-solid fa-map-location-dot"></i> Mapa de docas <span class="tooltiptext">Mapa de docas</span></a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1v3LFNa-KLd0g9ljVzvuxcuRnbpiD2FYRuCsV333dP9k/edit#gid=0" target="_blank" class="tooltip"><i class="fa-solid fa-key"></i> Sandbox <span class="tooltiptext">Ambiente de testes Sandbox</span></a></li>
+        <li class="hidden"><a href="https://docs.google.com/spreadsheets/d/1OWoWQGw-p1OOt2YToEpRylk88u9M3wBZYbLufM2OfgA/edit#gid=0" target="_blank" class="tooltip"><i class="fa-solid fa-map-pin"></i> Siglas de SV's <span class="tooltiptext">Lista de siglas de SV's</span></a></li>
+        <li class="hidden"><a href="https://docs.google.com/spreadsheets/d/1uO98BDBLtOET7k_JlbnJuT68WnDuaFBvhu_HKZfQoXw/edit#gid=535468276" target="_blank" class="tooltip"><i class="fa-solid fa-n"></i> Stale - NONECO <span class="tooltiptext">Dados de NONECO</span></a></li>
+        <li class="hidden"><a href="https://docs.google.com/spreadsheets/d/1iWnEtB0JvT2HnMbRllXfsie1AF6kOhJAK3nK1gkrl5Y/edit#gid=354200326" target="_blank" class="tooltip"><i class="fa-solid fa-r"></i> Stale - RIMEX <span class="tooltiptext">Dados de RIMEX</span></a></li> 
+        <li class="hidden"><a href="https://docs.google.com/spreadsheets/d/1iWnEtB0JvT2HnMbRllXfsie1AF6kOhJAK3nK1gkrl5Y/edit#gid=354200326" target="_blank" class="tooltip"><i class="fa-solid fa-s"></i> Stale - SPISUL <span class="tooltiptext">Dados de SPISUL</span></a></li> 
       </ul>
       <button class="expand-button">Ver mais</button>
-    </ul>
-  </section>
     </section>
     <!-- SEÇÃO DE PLANILHAS -->
 
@@ -63,159 +111,143 @@
     <section id="indicadores" class="section">
       <h2><i class="fas fa-chart-bar"></i> Indicadores</h2>
       <ul>
-        <li><a href="https://tableau.adminml.com/#/site/Shipping/views/AnalisisMissortedBQ_16467694487710/Missorted?:iid=1" target="_blank"><i class="fas fa-chart-line"></i> Tableau Missorted</a></li>
-        <li><a href="https://lookerstudio.google.com/u/0/reporting/9f4dee92-1c2c-4228-a01e-f873c7be74be/page/p_zc85wenwad" target="_blank"><i class="fa-solid fa-eye"></i> Indicadores Operacionais Loss</a></li>
-        <li><a href="https://lookerstudio.google.com/u/0/reporting/dcddd2e5-a0ab-45c8-8f35-d2fd1f317b74/page/p_gav3184ufd" target="_blank"><i class="fa-solid fa-truck-fast"></i> Out On Time</a></li>
-        <li><a href="https://lookerstudio.google.com/reporting/f347e4c0-8b7b-4381-8afd-103747f11495/page/p_axnw3232hd" target="_blank"><i class="fa-solid fa-user-secret"></i> Indicadores Patrimoniais</a></li>
-
-        <li class="hidden"><a href="https://lookerstudio.google.com/reporting/b9700c5b-ea6d-4140-9312-7a2f8d583ba2" target="_blank"><i class="fa-regular fa-circle-xmark"></i> No Shipped</a></li>
-        <li class="hidden"><a href="https://lookerstudio.google.com/reporting/54704bfe-f793-470b-ab4b-23787774536f/page/mrQPD" target="_blank"><i class="fas fa-chart-line"></i> Stale Regional</a></li>
-        <li class="hidden"><a href="https://lookerstudio.google.com/reporting/0ba5f34c-397b-4eeb-92c7-27a2442371c3/page/p_ifu5ib9wed" target="_blank"><i class="fa-solid fa-triangle-exclamation"></i> Risk at Station</a></li>
-        
-
+        <li><a href="https://tableau.adminml.com/#/site/Shipping/views/AnalisisMissortedBQ_16467694487710/Missorted?:iid=1" target="_blank" class="tooltip"><i class="fas fa-chart-line"></i> Tableau Missorted <span class="tooltiptext">Indicadores de Missorted no Tableau</span></a></li>
+        <li><a href="https://lookerstudio.google.com/u/0/reporting/9f4dee92-1c2c-4228-a01e-f873c7be74be/page/p_zc85wenwad" target="_blank" class="tooltip"><i class="fa-solid fa-eye"></i> Indicadores Operacionais Loss <span class="tooltiptext">Indicadores Operacionais de Loss</span></a></li>
+        <li><a href="https://lookerstudio.google.com/u/0/reporting/dcddd2e5-a0ab-45c8-8f35-d2fd1f317b74/page/p_gav3184ufd" target="_blank" class="tooltip"><i class="fa-solid fa-truck-fast"></i> Out On Time <span class="tooltiptext">Indicadores de Out On Time</span></a></li>
+        <li><a href="https://lookerstudio.google.com/reporting/f347e4c0-8b7b-4381-8afd-103747f11495/page/p_axnw3232hd" target="_blank" class="tooltip"><i class="fa-solid fa-user-secret"></i> Indicadores Patrimoniais <span class="tooltiptext">Indicadores Patrimoniais</span></a></li>
+        <li class="hidden"><a href="https://lookerstudio.google.com/reporting/b9700c5b-ea6d-4140-9312-7a2f8d583ba2" target="_blank" class="tooltip"><i class="fa-regular fa-circle-xmark"></i> No Shipped <span class="tooltiptext">Dados de No Shipped</span></a></li>
+        <li class="hidden"><a href="https://lookerstudio.google.com/reporting/54704bfe-f793-470b-ab4b-23787774536f/page/mrQPD" target="_blank" class="tooltip"><i class="fas fa-chart-line"></i> Stale Regional <span class="tooltiptext">Indicadores Regionais Stale</span></a></li>
+        <li class="hidden"><a href="https://lookerstudio.google.com/reporting/0ba5f34c-397b-4eeb-92c7-27a2442371c3/page/p_ifu5ib9wed" target="_blank" class="tooltip"><i class="fa-solid fa-triangle-exclamation"></i> Risk at Station <span class="tooltiptext">Indicadores de Risco na Estação</span></a></li>
       </ul>
       <button class="expand-button">Ver mais</button>
     </section>
     <!-- SEÇÃO DE INDICADORES -->
 
-        <!-- SEÇÃO DE INVESTIGAÇÕES -->
-        <section id="rastreio" class="section">
-            <h2><i class="fa-solid fa-magnifying-glass"></i> Investigações </h2>
-            <ul>
-              <li><a href="https://www.appsheet.com/start/33eff3b6-d264-4ad0-b9fe-4283309f9589?platform=desktop#vss=H4sIAAAAAAAAA6WQuw7CMAxF_-XO-YKssCGxgFgwQ9q4IqJtUJKCqij_jsNzrhh9rHN95Yyb4_sumfYCfcy_acMzNDJhP1-ZoAkrP6bge4IibM3wgmsTz403wRIKykl9AhJH6LzQ13_eV3CWx-Q6x6GGVVVC3qKsqybgK6EoDFMyTc_PziKVIqzz7RTZHqTM8ic8AOAjoC1TAQAA&view=Dashboard&appName=Solicita%C3%A7%C3%A3odeimagem-BRXSP9-802833914" target="_blank"><i class="fa-solid fa-screwdriver-wrench"></i> App investigações</a></li>
-              <li><a href="https://tms.adminml.com/fos/shipment/list" target="_blank"><i class="fa-solid fa-clipboard-list"></i> Lista de Envios</a></li>
-              <li><a href="https://meli.looker.com/dashboards/shipping::monitor_hibridos_v4?Site+=MLB&Logistic+Center+Actual=BRXSP9&Logistic+Center+Previous=&HU+ID=&Vehicle+Plate=&Direct+Transfer+%28Yes+%2F+No%29=&Checkin+Accept+Date=&Shipped+Date=&Outbound+Channel=&Presumible+Logistic+Center=&Step+order=&Created+Month=3+month&HU+Status=%22added_to_container%22%2Cshipped%2Cinactivated%2Cunplanned&Shipment+ID%27s=&Master+ID=" target="_blank"><i class="fa-solid fa-desktop"></i> Monitor Hibrido</a></li>
-              <li><a href="https://meli.looker.com/dashboards/5117?Position+Name=&Event+Time=30+day&Logistic+Center+ID=BRXSP9&Id=2315943058603112&Action=&Flujo=&Stage+Name=&User=&Position+ID=" target="_blank"><i class="fa-solid fa-people-carry-box"></i> Staging Zones</a></li>
-            </ul>
-            <li class="hidden"><a href="https://shipping-bo.adminml.com/shipments/shipment_search" target="_blank"><i class="fa-solid fa-box"></i> Sauron Shipment</a></li> 
-          </ul>
-            <button class="expand-button">Ver mais</button>
-          </section>
-          <!-- SEÇÃO DE INVESTIGAÇÕES -->
+    <!-- SEÇÃO DE INVESTIGAÇÕES -->
+    <section id="rastreio" class="section">
+      <h2><i class="fa-solid fa-magnifying-glass"></i> Investigações </h2>
+      <ul>
+        <li><a href="https://www.appsheet.com/start/33eff3b6-d264-4ad0-b9fe-4283309f9589?platform=desktop#vss=H4sIAAAAAAAAA6WQuw7CMAxF_-XO-YKssCGxgFgwQ9q4IqJtUJKCqij_jsNzrhh9rHN95Yyb4_sumfYCfcy_acMzNDJhP1-ZoAkrP6bge4IibM3wgmsTz403wRIKykl9AhJH6LzQ13_eV3CWx-Q6x6GGVVVC3qKsqybgK6EoDFMyTc_PziKVIqzz7RTZHqTM8ic8AOAjoC1TAQAA&view=Dashboard&appName=Solicita%C3%A7%C3%A3odeimagem-BRXSP9-802833914" target="_blank" class="tooltip"><i class="fa-solid fa-screwdriver-wrench"></i> App investigações <span class="tooltiptext">Aplicativo de investigações</span></a></li>
+        <li><a href="https://tms.adminml.com/fos/shipment/list" target="_blank" class="tooltip"><i class="fa-solid fa-clipboard-list"></i> Lista de Envios <span class="tooltiptext">Lista de envios de mercadorias</span></a></li>
+        <li><a href="https://meli.looker.com/dashboards/shipping::monitor_hibridos_v4?Site+=MLB&Logistic+Center+Actual=BRXSP9&Logistic+Center+Previous=&HU+ID=&Vehicle+Plate=&Direct+Transfer+%28Yes+%2F+No%29=&Checkin+Accept+Date=&Shipped+Date=&Outbound+Channel=&Presumible+Logistic+Center=&Step+order=&Created+Month=3+month&HU+Status=%22added_to_container%22%2Cshipped%2Cinactivated%2Cunplanned&Shipment+ID%27s=&Master+ID=" target="_blank" class="tooltip"><i class="fa-solid fa-desktop"></i> Monitor Hibrido <span class="tooltiptext">Monitoramento híbrido</span></a></li>
+        <li><a href="https://meli.looker.com/dashboards/5117?Position+Name=&Event+Time=30+day&Logistic+Center+ID=BRXSP9&Id=2315943058603112&Action=&Flujo=&Stage+Name=&User=&Position+ID=" target="_blank" class="tooltip"><i class="fa-solid fa-people-carry-box"></i> Staging Zones <span class="tooltiptext">Zonas de Estágio</span></a></li>
+        <li class="hidden"><a href="https://shipping-bo.adminml.com/shipments/shipment_search" target="_blank" class="tooltip"><i class="fa-solid fa-box"></i> Sauron Shipment <span class="tooltiptext">Busca de envios Sauron</span></a></li> 
+      </ul>
+      <button class="expand-button">Ver mais</button>
+    </section>
+    <!-- SEÇÃO DE INVESTIGAÇÕES -->
 
-          <!-- SEÇÃO DE FORMULÁRIOS -->
+    <!-- SEÇÃO DE FORMULÁRIOS -->
     <section id="rastreio" class="section">
       <h2><i class="fa-solid fa-list"></i> Formulários</h2>
       <ul>
-        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScLRIKcw-A8cDkZUoAzR-rpndzbuvzEJCD5p534PNpoRQ-UvA/viewform?vc=0&c=0&w=1&flr=0" target="_blank"><i class="fa-solid fa-boxes-stacked"></i> Missorted</a></li>
-        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf8kAWWvQ0jllGFCwzvFnJ3_vCm0YFAQnz841pj2YmfocylJg/viewform?pli=1&pli=1" target="_blank"><i class="fa-solid fa-box-open"></i> Avarias</a></li>
-        <li><a href="https://docs.google.com/forms/d/1cVXGQu4iBishHSLfuhkkjM95lyvty1uVqhgnSFItR2o/viewform?edit_requested=true" target="_blank"><i class="fa-solid fa-video"></i> Solicitação CFTV</a></li>
-        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdD2pF1Hu3BhbjkR0bBEaOYRl8CQrr5puyoZD1NQ11Arz1SqQ/viewform?usp=sf_link" target="_blank"><i class="fa-solid fa-file-lines"></i> Avaliação At Station</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScLRIKcw-A8cDkZUoAzR-rpndzbuvzEJCD5p534PNpoRQ-UvA/viewform?vc=0&c=0&w=1&flr=0" target="_blank" class="tooltip"><i class="fa-solid fa-boxes-stacked"></i> Missorted <span class="tooltiptext">Formulário de Missorted</span></a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf8kAWWvQ0jllGFCwzvFnJ3_vCm0YFAQnz841pj2YmfocylJg/viewform?pli=1&pli=1" target="_blank" class="tooltip"><i class="fa-solid fa-box-open"></i> Avarias <span class="tooltiptext">Formulário de Avarias</span></a></li>
+        <li><a href="https://docs.google.com/forms/d/1cVXGQu4iBishHSLfuhkkjM95lyvty1uVqhgnSFItR2o/viewform?edit_requested=true" target="_blank" class="tooltip"><i class="fa-solid fa-video"></i> Solicitação CFTV <span class="tooltiptext">Formulário de Solicitação de CFTV</span></a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdD2pF1Hu3BhbjkR0bBEaOYRl8CQrr5puyoZD1NQ11Arz1SqQ/viewform?usp=sf_link" target="_blank" class="tooltip"><i class="fa-solid fa-file-lines"></i> Avaliação At Station <span class="tooltiptext">Formulário de Avaliação At Station</span></a></li>
       </ul>
       <button class="expand-button">Ver mais</button>
     </section>
     <!-- SEÇÃO DE FORMULÁRIOS --> 
 
-          
-       <!-- SEÇÃO DE QUERY'S -->
-       <section id="rastreio" class="section">
-        <h2><i class="fa-solid fa-terminal"></i> Query's</h2>
-        <ul>
-          <li><a href="https://drive.google.com/drive/folders/1w_CxEY7HqcqBUZWiVuT36AMyD-WsaqmW?usp=drive_link" target="_blank"><i class="fa-brands fa-google-drive"></i> Repositório de Query's</a></li>
-          <li><a href="https://console.cloud.google.com/bigquery?sq=1008615894896:887556e2c7794763a062a82158d86fe0&project=meli-bi-data&ws=!1m4!1m3!8m2!1s1008615894896!2s887556e2c7794763a062a82158d86fe0" target="_blank"><i class="fa-regular fa-file-code"></i> Status</a></li>
-          <li><a href="https://console.cloud.google.com/bigquery?sq=1008615894896:1ac01322ec804ad3b86a8087c66e4106&project=meli-bi-data&ws=!1m4!1m3!8m2!1s1008615894896!2s1ac01322ec804ad3b86a8087c66e4106" target="_blank"><i class="fa-regular fa-file-code"></i> V3 / V4</a></li>
-        </ul>
-        <button class="expand-button">Ver mais</button>
-      </section>
-      <!-- SEÇÃO DE QUERY'S -->
-          
-
-   <!-- SEÇÃO DE DOCUMENTOS -->
+    <!-- SEÇÃO DE QUERY'S -->
     <section id="rastreio" class="section">
-        <h2><i class="fa-solid fa-file"></i> Documentos LOSS</h2>
-        <ul>
-          <li><a href="https://sites.google.com/mercadolibre.com/wowexcelenciaoperacional-port/cross-standards/loss-prevention" target="_blank"><i class="fa-solid fa-book"></i> WI's</a></li>
-          <li><a href="https://docs.google.com/presentation/d/1YwFjtHxS1IwRtQl11oaRjrVYNKHoOHn_NmguszygOVI/edit#slide=id.g22885dab09c_0_0" target="_blank"><i class="fa-solid fa-file"></i> Playbook Dados</a></li>
-          <li><a href="https://docs.google.com/presentation/d/1cHlvW_n5eqqThlLeur3MlUq7X0uQfVdzR7L_lbQq5xA/edit#slide=id.g1e69eeb4a27_0_184" target="_blank"><i class="fa-solid fa-file"></i> Playbook Patrimonial</a></li>
-          <li><a href="https://docs.google.com/presentation/d/1VB-cdkPtTuby2EJTmmWHZH7HBBTjThILN46jaWIb-8U/edit#slide=id.g1e53b0ce280_0_0" target="_blank"><i class="fa-solid fa-file-powerpoint"></i> Apresentação Onboarding</a></li>
-        </ul>
-        <button class="expand-button">Ver mais</button>
-      </section>
-      <!-- SEÇÃO DE DOCUMENTOS --> 
+      <h2><i class="fa-solid fa-terminal"></i> Query's</h2>
+      <ul>
+        <li><a href="https://drive.google.com/drive/folders/1w_CxEY7HqcqBUZWiVuT36AMyD-WsaqmW?usp=drive_link" target="_blank" class="tooltip"><i class="fa-brands fa-google-drive"></i> Repositório de Query's <span class="tooltiptext">Repositório de Query's</span></a></li>
+        <li><a href="https://console.cloud.google.com/bigquery?sq=1008615894896:887556e2c7794763a062a82158d86fe0&project=meli-bi-data&ws=!1m4!1m3!8m2!1s1008615894896!2s887556e2c7794763a062a82158d86fe0" target="_blank" class="tooltip"><i class="fa-regular fa-file-code"></i> Status <span class="tooltiptext">Consulta de status no BigQuery</span></a></li>
+        <li><a href="https://console.cloud.google.com/bigquery?sq=1008615894896:1ac01322ec804ad3b86a8087c66e4106&project=meli-bi-data&ws=!1m4!1m3!8m2!1s1008615894896!2s1ac01322ec804ad3b86a8087c66e4106" target="_blank" class="tooltip"><i class="fa-regular fa-file-code"></i> V3 / V4 <span class="tooltiptext">Consultas V3 / V4 no BigQuery</span></a></li>
+      </ul>
+      <button class="expand-button">Ver mais</button>
+    </section>
+    <!-- SEÇÃO DE QUERY'S -->
 
+    <!-- SEÇÃO DE DOCUMENTOS -->
+    <section id="rastreio" class="section">
+      <h2><i class="fa-solid fa-file"></i> Documentos LOSS</h2>
+      <ul>
+        <li><a href="https://sites.google.com/mercadolibre.com/wowexcelenciaoperacional-port/cross-standards/loss-prevention" target="_blank" class="tooltip"><i class="fa-solid fa-book"></i> WI's <span class="tooltiptext">Instruções de Trabalho (WI's)</span></a></li>
+        <li><a href="https://docs.google.com/presentation/d/1YwFjtHxS1IwRtQl11oaRjrVYNKHoOHn_NmguszygOVI/edit#slide=id.g22885dab09c_0_0" target="_blank" class="tooltip"><i class="fa-solid fa-file"></i> Playbook Dados <span class="tooltiptext">Playbook de Dados</span></a></li>
+        <li><a href="https://docs.google.com/presentation/d/1cHlvW_n5eqqThlLeur3MlUq7X0uQfVdzR7L_lbQq5xA/edit#slide=id.g1e69eeb4a27_0_184" target="_blank" class="tooltip"><i class="fa-solid fa-file"></i> Playbook Patrimonial <span class="tooltiptext">Playbook Patrimonial</span></a></li>
+        <li><a href="https://docs.google.com/presentation/d/1VB-cdkPtTuby2EJTmmWHZH7HBBTjThILN46jaWIb-8U/edit#slide=id.g1e53b0ce280_0_0" target="_blank" class="tooltip"><i class="fa-solid fa-file-powerpoint"></i> Apresentação Onboarding <span class="tooltiptext">Apresentação de Onboarding</span></a></li>
+      </ul>
+      <button class="expand-button">Ver mais</button>
+    </section>
+    <!-- SEÇÃO DE DOCUMENTOS -->
 
-
-      
   </main>
   <!-- Modal -->
-<div id="myModal" class="modal">
-  <div class="modal-content">
+  <div id="myModal" class="modal">
+    <div class="modal-content">
       <span class="close">&times;</span>
       <ul id="fullList"></ul>
+    </div>
   </div>
-</div>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Fechar o modal ao carregar a página
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Fechar o modal ao carregar a página
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
+      // Adicionar evento de clique aos botões "Ver mais"
+      document.querySelectorAll(".expand-button").forEach(function(button) {
+        button.addEventListener("click", function() {
+          var section = this.parentNode;
+          var allItems = section.querySelectorAll("li");
+          var fullList = document.getElementById("fullList");
 
-  // Adicionar evento de clique aos botões "Ver mais"
-  document.querySelectorAll(".expand-button").forEach(function(button) {
-    button.addEventListener("click", function() {
-      var section = this.parentNode;
-      var allItems = section.querySelectorAll("li");
-      var fullList = document.getElementById("fullList");
+          // Limpar a lista completa antes de adicionar os itens
+          fullList.innerHTML = "";
 
-      // Limpar a lista completa antes de adicionar os itens
-      fullList.innerHTML = "";
+          allItems.forEach(function(li) {
+            var clonedLi = li.cloneNode(true);
+            clonedLi.style.display = "block";  // Garantir que os itens estarão visíveis no modal
+            fullList.appendChild(clonedLi);
+          });
 
-      allItems.forEach(function(li) {
-        var clonedLi = li.cloneNode(true);
-        clonedLi.style.display = "block";  // Garantir que os itens estarão visíveis no modal
-        fullList.appendChild(clonedLi);
+          modal.style.display = "flex"; // Usar flex para centralizar
+        });
       });
 
-      modal.style.display = "flex"; // Usar flex para centralizar
+      // Fechar o modal ao clicar no botão de fechar (X)
+      document.getElementsByClassName("close")[0].addEventListener("click", function() {
+        modal.style.display = "none";
+      });
+
+      // Fechar o modal ao clicar fora dele
+      window.addEventListener("click", function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
     });
-  });
 
-  // Fechar o modal ao clicar no botão de fechar (X)
-  document.getElementsByClassName("close")[0].addEventListener("click", function() {
-    modal.style.display = "none";
-  });
-
-  // Fechar o modal ao clicar fora dele
-  window.addEventListener("click", function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  });
-});
-
-
-
-    
     // BLOCO JS DA BARRA DE PESQUISA
     document.getElementById("searchButton").addEventListener("click", function() {
-    var searchTerm = document.getElementById("searchInput").value.toLowerCase();
-    var elements = document.querySelectorAll(".section ul li");
-    elements.forEach(function(element) {
-      if (element.innerText.toLowerCase().includes(searchTerm)) {
-        element.style.display = "block";
-      } else {
-        element.style.display = "none";
-      }
+      var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+      var elements = document.querySelectorAll(".section ul li");
+      elements.forEach(function(element) {
+        if (element.innerText.toLowerCase().includes(searchTerm)) {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      });
     });
-  });
 
-  document.getElementById("searchInput").addEventListener("keyup", function() {
-    var searchTerm = document.getElementById("searchInput").value.toLowerCase();
-    var elements = document.querySelectorAll(".section ul li");
-    elements.forEach(function(element) {
-      if (element.innerText.toLowerCase().includes(searchTerm)) {
-        element.style.display = "block";
-      } else {
-        element.style.display = "none";
-      }
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+      var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+      var elements = document.querySelectorAll(".section ul li");
+      elements.forEach(function(element) {
+        if (element.innerText.toLowerCase().includes(searchTerm)) {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      });
     });
-  });
-  // BLOCO JS DA BARRA DE PESQUISA
-
+    // BLOCO JS DA BARRA DE PESQUISA
   </script>
-
-
 </body>
 </html>
